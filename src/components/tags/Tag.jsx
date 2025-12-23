@@ -9,9 +9,9 @@ const Tag = ({ tag }) => {
 
     const handleSelected = () => {
         if (isSelected) {
-            dispatch(removedTags(title))
+            dispatch(removedTags(title));
         } else {
-            dispatch(selectedTags(title))
+            dispatch(selectedTags(title));
         }
     }
 

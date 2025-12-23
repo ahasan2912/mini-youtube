@@ -10,8 +10,8 @@ const initialState = {
 }
 
 // create asyncThank
-export const fetchVideo = createAsyncThunk('fetch/videos', async () => {
-    const videos = await getVideos();
+export const fetchVideo = createAsyncThunk('fetch/videos', async ({ tags, search }) => {
+    const videos = await getVideos(tags, search);
     return videos;
 })
 

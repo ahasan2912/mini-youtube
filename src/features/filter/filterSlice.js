@@ -15,12 +15,11 @@ const filterSlice = createSlice({
         removedTags: (state, action) => {
             const removeIndex = state.tags.indexOf(action.payload);
             if (removeIndex !== -1) {
-                state.tags.splice(removeIndex, 1);
+                state.tags.splice(removeIndex, 1); //always delete one element
             }
         },
         searched: (state, action) => {
             state.search = action.payload;
-            console.log(state.search);
         }
     }
 });

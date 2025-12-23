@@ -5,11 +5,14 @@ import { fetchVideo } from "../../features/videos/videosSlice";
 import { Link } from "react-router-dom";
 
 const VideoGrid = () => {
-    const {isLoading, videos } = useSelector((state) => state.videos);
+    const { isLoading, videos } = useSelector((state) => state.videos);
     const dispatch = useDispatch();
+
+    const { tags, search } = useSelector(state => state.filter);
+
     useEffect(() => {
-        dispatch(fetchVideo());
-    }, [dispatch]);
+        dispatch(fetchVideo({ tags, search }));
+    }, [dispatch, tags, search]);
 
     if (isLoading) {
         return <div className="flex justify-center items-center h-screen">
